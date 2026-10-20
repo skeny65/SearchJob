@@ -2,114 +2,158 @@
   "schema_version": 1,
   "jobs": {
     "25bc95884de9df1ef7508bc600c88e4264d0e714f481f53ad4d0e5a737ef864e": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Senior Cloud Engineer",
       "company": "Niuro",
       "url": "https://www.getonbrd.com/jobs/senior-cloud-engineer-niuro-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "e5189f13805e86655fb5ec89209297d768ff380cc3abffcf6018352bfba7c406": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Senior Cloud Engineer",
       "company": "World Wildlife Fund, Inc.",
       "url": "https://www.getonbrd.com/jobs/senior-cloud-engineer-world-wildlife-fund-inc-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "9a9b26d6faeedd7b48de2fb776c6f08a1f94805e13bf942dca02f007198879c4": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "SRE / DevOps Engineer",
       "company": "BC Tecnología",
       "url": "https://www.getonbrd.com/jobs/sre-devops-engineer-bc-tecnologia-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "c3a27388c405f8e31bfb45a443076e12b2ec1ea50afcc9f1f314ed5e5caf01c3": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "SRE / DevOps Engineer Junior",
       "company": "BC Tecnología",
       "url": "https://www.getonbrd.com/jobs/sre-devops-engineer-junior-bc-tecnologia-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "72d0ba29ff1284e9569e3e17f0d9218c6e5e15bd9ff7bf79663566381a70fcda": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "DevOps Engineer / Cloud Engineer (LATAM)",
       "company": "BC Tecnología",
       "url": "https://www.getonbrd.com/jobs/devops-engineer-cloud-engineer-latam-bc-tecnologia-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "630c8cddec1092463721f776aca432c6da8cd976aef3a76213aab48cc07df281": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Ingeniero Cloud AWS",
       "company": "Promarketing",
       "url": "https://www.getonbrd.com/jobs/ingeniero-cloud-aws-promarketing-remote-274d",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "f9a204c92049620002e405aedf54f94ecab307eb95f0281585f920f00816e60a": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Cloud Engineer Mid/Sr",
       "company": "Alegra",
       "url": "https://www.getonbrd.com/jobs/cloud-engineer-mid-sr-alegra-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "b7c8c7fac579f90f7d4fecad7ef91e22dac6b3fc9733eabe30b2fc70751599e5": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Sr. DevOps & Infrastructure Consultant",
       "company": "Inflect, Inc.",
       "url": "https://www.getonbrd.com/jobs/sr-devops-infrastructure-consultant-inflect-inc-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "65bb70d5c14da06d326349bb5d188b983087f41531a0726e51208d6c3f5070a7": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Líder Técnico DevOps (WebLogic)",
       "company": "BC Tecnología",
       "url": "https://www.getonbrd.com/jobs/lider-tecnico-devops-weblogic-bc-tecnologia-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "35f045f387bd43b01be8b36d480e542c225586b89b9eb77d295f7b65dc2a0edd": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "DevOps & AI Infrastructure Engineer",
       "company": "Crost AI",
       "url": "https://www.getonbrd.com/jobs/devops-ai-infrastructure-engineer-crost-ai-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     },
     "6b297a1a88daa545fcfe82e1c87200fe161212fb005c08f4d357c40d3a09e96a": {
-      "status": "sending",
+      "status": "notified",
       "reservation": "160e76fc182c4b43a07419f0e8a49527",
       "first_seen_at": "2026-10-20T10:21:32+00:00",
       "last_seen_at": "2026-10-20T10:21:32+00:00",
       "title": "Cloud Engineer",
       "company": "Guinea Mobile SAC (Cuy Móvil)",
       "url": "https://www.getonbrd.com/jobs/cloud-engineer-guinea-mobile-sac-cuy-movil-remote",
-      "source": "getonbrd"
+      "source": "getonbrd",
+      "message_ids": [
+        3
+      ],
+      "notified_at": "2026-10-20T10:21:32+00:00"
     }
   }
 }
