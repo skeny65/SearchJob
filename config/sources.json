@@ -1,0 +1,5 @@
+{
+  "getonbrd": {"enabled": true, "url": "https://www.getonbrd.com/api/v0/categories", "category": "sysadmin-devops-qa", "max_pages": 3},
+  "remotive": {"enabled": true, "url": "https://remotive.com/api/remote-jobs"},
+  "remoteok": {"enabled": true, "url": "https://remoteok.com/api"}
+}
