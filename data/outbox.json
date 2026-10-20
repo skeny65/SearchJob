@@ -1,0 +1,467 @@
+{
+  "run_id": "160e76fc182c4b43a07419f0e8a49527",
+  "run_at": "2026-10-20T10:21:32+00:00",
+  "status": "ready",
+  "jobs": [
+    {
+      "id": "25bc95884de9df1ef7508bc600c88e4264d0e714f481f53ad4d0e5a737ef864e",
+      "source_id": "senior-cloud-engineer-niuro-remote",
+      "title": "Senior Cloud Engineer",
+      "company": "Niuro",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/senior-cloud-engineer-niuro-remote",
+      "source": "getonbrd",
+      "published_at": "2026-10-08T15:28:13+00:00",
+      "matches": [
+        "Azure",
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "SSO",
+        "Cloud Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Azure",
+          "AWS",
+          "Terraform",
+          "CI/CD",
+          "Docker",
+          "Kubernetes",
+          "SSO",
+          "Cloud Engineer"
+        ],
+        "roles": [
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "Azure",
+          "AWS"
+        ],
+        "cloud_priority": 0,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "e5189f13805e86655fb5ec89209297d768ff380cc3abffcf6018352bfba7c406",
+      "source_id": "senior-cloud-engineer-world-wildlife-fund-inc-remote",
+      "title": "Senior Cloud Engineer",
+      "company": "World Wildlife Fund, Inc.",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/senior-cloud-engineer-world-wildlife-fund-inc-remote",
+      "source": "getonbrd",
+      "published_at": "2026-09-02T14:24:26+00:00",
+      "matches": [
+        "Azure",
+        "SSO",
+        "Cloud Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Azure",
+          "SSO",
+          "Cloud Engineer"
+        ],
+        "roles": [
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "Azure"
+        ],
+        "cloud_priority": 0,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "9a9b26d6faeedd7b48de2fb776c6f08a1f94805e13bf942dca02f007198879c4",
+      "source_id": "sre-devops-engineer-bc-tecnologia-remote",
+      "title": "SRE / DevOps Engineer",
+      "company": "BC Tecnología",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/sre-devops-engineer-bc-tecnologia-remote",
+      "source": "getonbrd",
+      "published_at": "2026-02-24T17:38:06+00:00",
+      "matches": [
+        "Azure",
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Docker",
+        "DevOps Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Azure",
+          "AWS",
+          "Terraform",
+          "CI/CD",
+          "Docker",
+          "DevOps Engineer"
+        ],
+        "roles": [
+          "DevOps Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "Azure",
+          "AWS"
+        ],
+        "cloud_priority": 0,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "c3a27388c405f8e31bfb45a443076e12b2ec1ea50afcc9f1f314ed5e5caf01c3",
+      "source_id": "sre-devops-engineer-junior-bc-tecnologia-remote",
+      "title": "SRE / DevOps Engineer Junior",
+      "company": "BC Tecnología",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/sre-devops-engineer-junior-bc-tecnologia-remote",
+      "source": "getonbrd",
+      "published_at": "2026-02-24T16:36:54+00:00",
+      "matches": [
+        "Azure",
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "DevOps Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Azure",
+          "AWS",
+          "Terraform",
+          "CI/CD",
+          "Docker",
+          "Kubernetes",
+          "DevOps Engineer"
+        ],
+        "roles": [
+          "DevOps Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "Azure",
+          "AWS"
+        ],
+        "cloud_priority": 0,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "72d0ba29ff1284e9569e3e17f0d9218c6e5e15bd9ff7bf79663566381a70fcda",
+      "source_id": "devops-engineer-cloud-engineer-latam-bc-tecnologia-remote",
+      "title": "DevOps Engineer / Cloud Engineer (LATAM)",
+      "company": "BC Tecnología",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/devops-engineer-cloud-engineer-latam-bc-tecnologia-remote",
+      "source": "getonbrd",
+      "published_at": "2025-11-26T12:04:29+00:00",
+      "matches": [
+        "Azure",
+        "AWS",
+        "Terraform",
+        "Docker",
+        "Kubernetes",
+        "DevOps Engineer",
+        "Cloud Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Azure",
+          "AWS",
+          "Terraform",
+          "Docker",
+          "Kubernetes",
+          "DevOps Engineer",
+          "Cloud Engineer"
+        ],
+        "roles": [
+          "DevOps Engineer",
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "Azure",
+          "AWS"
+        ],
+        "cloud_priority": 0,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "630c8cddec1092463721f776aca432c6da8cd976aef3a76213aab48cc07df281",
+      "source_id": "ingeniero-cloud-aws-promarketing-remote-274d",
+      "title": "Ingeniero Cloud AWS",
+      "company": "Promarketing",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/ingeniero-cloud-aws-promarketing-remote-274d",
+      "source": "getonbrd",
+      "published_at": "2026-09-04T12:08:16+00:00",
+      "matches": [
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "VPN"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "AWS",
+          "Terraform",
+          "CI/CD",
+          "Docker",
+          "Kubernetes",
+          "VPN"
+        ],
+        "roles": [
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "AWS"
+        ],
+        "cloud_priority": 1,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "f9a204c92049620002e405aedf54f94ecab307eb95f0281585f920f00816e60a",
+      "source_id": "cloud-engineer-mid-sr-alegra-remote",
+      "title": "Cloud Engineer Mid/Sr",
+      "company": "Alegra",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/cloud-engineer-mid-sr-alegra-remote",
+      "source": "getonbrd",
+      "published_at": "2026-08-26T23:47:28+00:00",
+      "matches": [
+        "AWS",
+        "Terraform",
+        "GitHub Actions",
+        "Docker",
+        "Cloud Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "AWS",
+          "Terraform",
+          "GitHub Actions",
+          "Docker",
+          "Cloud Engineer"
+        ],
+        "roles": [
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "AWS"
+        ],
+        "cloud_priority": 1,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "b7c8c7fac579f90f7d4fecad7ef91e22dac6b3fc9733eabe30b2fc70751599e5",
+      "source_id": "sr-devops-infrastructure-consultant-inflect-inc-remote",
+      "title": "Sr. DevOps & Infrastructure Consultant",
+      "company": "Inflect, Inc.",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/sr-devops-infrastructure-consultant-inflect-inc-remote",
+      "source": "getonbrd",
+      "published_at": "2026-08-19T15:31:28+00:00",
+      "matches": [
+        "AWS",
+        "Terraform",
+        "CI/CD"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "AWS",
+          "Terraform",
+          "CI/CD"
+        ],
+        "roles": [
+          "DevOps Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "AWS"
+        ],
+        "cloud_priority": 1,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "65bb70d5c14da06d326349bb5d188b983087f41531a0726e51208d6c3f5070a7",
+      "source_id": "lider-tecnico-devops-weblogic-bc-tecnologia-remote",
+      "title": "Líder Técnico DevOps (WebLogic)",
+      "company": "BC Tecnología",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/lider-tecnico-devops-weblogic-bc-tecnologia-remote",
+      "source": "getonbrd",
+      "published_at": "2026-05-29T18:29:33+00:00",
+      "matches": [
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "DevOps Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "AWS",
+          "Terraform",
+          "CI/CD",
+          "Docker",
+          "Kubernetes",
+          "DevOps Engineer"
+        ],
+        "roles": [
+          "DevOps Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [
+          "AWS"
+        ],
+        "cloud_priority": 1,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "35f045f387bd43b01be8b36d480e542c225586b89b9eb77d295f7b65dc2a0edd",
+      "source_id": "devops-ai-infrastructure-engineer-crost-ai-remote",
+      "title": "DevOps & AI Infrastructure Engineer",
+      "company": "Crost AI",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/devops-ai-infrastructure-engineer-crost-ai-remote",
+      "source": "getonbrd",
+      "published_at": "2026-10-09T15:12:37+00:00",
+      "matches": [
+        "GitHub Actions",
+        "CI/CD",
+        "Docker"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "GitHub Actions",
+          "CI/CD",
+          "Docker"
+        ],
+        "roles": [
+          "DevOps Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [],
+        "cloud_priority": 2,
+        "opportunity_type": "unknown"
+      }
+    },
+    {
+      "id": "6b297a1a88daa545fcfe82e1c87200fe161212fb005c08f4d357c40d3a09e96a",
+      "source_id": "cloud-engineer-guinea-mobile-sac-cuy-movil-remote",
+      "title": "Cloud Engineer",
+      "company": "Guinea Mobile SAC (Cuy Móvil)",
+      "location": "Remote",
+      "work_mode": "remote",
+      "opportunity_type": "unknown",
+      "url": "https://www.getonbrd.com/jobs/cloud-engineer-guinea-mobile-sac-cuy-movil-remote",
+      "source": "getonbrd",
+      "published_at": "2026-02-10T20:07:57+00:00",
+      "matches": [
+        "Terraform",
+        "CI/CD",
+        "Kubernetes",
+        "Cloud Engineer"
+      ],
+      "evaluation": {
+        "accepted": true,
+        "matches": [
+          "Terraform",
+          "CI/CD",
+          "Kubernetes",
+          "Cloud Engineer"
+        ],
+        "roles": [
+          "Cloud Engineer"
+        ],
+        "rejected_by": [],
+        "uncertainties": [
+          "Elegibilidad desde Peru por confirmar"
+        ],
+        "clouds": [],
+        "cloud_priority": 2,
+        "opportunity_type": "unknown"
+      }
+    }
+  ],
+  "summary": "Fuentes consultadas: getonbrd, remotive, remoteok. Fuentes con error o resultados parciales: ninguna. Avisos inciertos pendientes de revision: 0. Orden: Azure, AWS, otros cargos elegidos. Elegibilidad laboral por verificar.",
+  "exit_code": 0
+}

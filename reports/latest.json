@@ -1,0 +1,40 @@
+{
+  "run_at": "2026-10-20T10:21:32+00:00",
+  "run_id": "160e76fc182c4b43a07419f0e8a49527",
+  "profile_version": 2,
+  "sources_ok": [
+    "getonbrd",
+    "remotive",
+    "remoteok"
+  ],
+  "source_errors": {},
+  "fetched": 224,
+  "new_matches": 11,
+  "source_counts": {
+    "getonbrd": {
+      "pages": 2,
+      "fetched": 115,
+      "normalized": 115,
+      "malformed": 0
+    },
+    "remotive": {
+      "pages": 1,
+      "fetched": 10,
+      "normalized": 10,
+      "malformed": 0
+    },
+    "remoteok": {
+      "pages": 1,
+      "fetched": 99,
+      "normalized": 99,
+      "malformed": 0
+    }
+  },
+  "rejected_by": {
+    "cargo_fuera_del_objetivo": 202,
+    "modalidad_no_elegida": 66,
+    "restriccion_geografica_sin_peru": 83,
+    "sin_coincidencia_del_perfil": 137
+  },
+  "uncertain_deliveries": 0
+}
