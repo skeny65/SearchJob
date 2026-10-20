@@ -19,6 +19,7 @@ from uuid import uuid4
 
 from src.evaluation import evaluate, positive_terms
 from src.notifications import DeliveryError, telegram_send
+from src.feeds import teamtailor_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "KenyJobHunter/0.1 (personal job discovery)"
@@ -61,6 +62,7 @@ def fetch_json(url: str, *, timeout: int = 25, headers: dict[str, str] | None = 
 
 
 def normalize(source: str, item: dict[str, Any]) -> dict[str, Any] | None:
+    language_hint = ''
     if source == "getonbrd":
         attrs = item.get("attributes") or item
         title = attrs.get("title") or ""
@@ -82,6 +84,7 @@ def normalize(source: str, item: dict[str, Any]) -> dict[str, Any] | None:
         else:
             work_mode = 'remote' if attrs.get('remote') is True or mode in {'remote', 'fully_remote'} else ('onsite' if attrs.get('remote') is False else 'unknown')
         opportunity_type = 'unknown'
+        language_hint = str(attrs.get('lang') or '')
     elif source == "remotive":
         title = item.get("title") or ""
         company = item.get("company_name") or ""
@@ -100,6 +103,21 @@ def normalize(source: str, item: dict[str, Any]) -> dict[str, Any] | None:
         external_id = str(item.get("id") or "")
         description = item.get("description") or ""
         work_mode, opportunity_type = 'remote', item.get('job_type') or 'unknown'
+    elif source == 'jobicy':
+        title, company = item.get('jobTitle') or '', item.get('companyName') or ''
+        url, location = item.get('url') or '', item.get('jobGeo') or ''
+        published, external_id = item.get('pubDate'), str(item.get('id') or '')
+        description = item.get('jobDescription') or item.get('jobExcerpt') or ''
+        work_mode = 'remote'
+        job_type = item.get('jobType') or 'unknown'
+        opportunity_type = ', '.join(job_type) if isinstance(job_type, list) else str(job_type)
+    elif item.get('_source_kind') == 'teamtailor_rss':
+        title, company = item.get('title') or '', item.get('company') or ''
+        url, location = item.get('url') or '', item.get('location') or ''
+        published, external_id = item.get('published_at'), str(item.get('id') or '')
+        description = item.get('description') or ''
+        work_mode = {'fully': 'remote', 'remote': 'remote', 'hybrid': 'hybrid', 'none': 'onsite'}.get(item.get('remote_status'), 'unknown')
+        opportunity_type = 'unknown'
     else:
         return None
     mode_evidence = (title + ' ' + location).casefold()
@@ -120,6 +138,7 @@ def normalize(source: str, item: dict[str, Any]) -> dict[str, Any] | None:
     # separate unless both boards expose the same canonical URL.
     key_material = f"{source}:{source_id}" if external_id else f"{source}:{url}"
     key = hashlib.sha256(key_material.encode()).hexdigest()
+    description = re.sub(r'</(?:p|li)>|<br\s*/?>', '. ', description, flags=re.IGNORECASE)
     clean_description = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", description))).strip()
     if isinstance(published, (float, int)):
         published = datetime.fromtimestamp(published, timezone.utc).isoformat(timespec='seconds')
@@ -131,6 +150,8 @@ def normalize(source: str, item: dict[str, Any]) -> dict[str, Any] | None:
         "location": re.sub(r"\s+", " ", location).strip() or "Ubicación no indicada",
         "work_mode": work_mode,
         "opportunity_type": opportunity_type,
+        'description': clean_description,
+        'language_hint': language_hint,
         "url": url,
         "source": source,
         "published_at": published,
@@ -175,6 +196,26 @@ def collect(sources: dict[str, Any], stats: dict | None = None) -> tuple[list[di
                             attrs['company_name'] = companies[company_id].get('name', '')
                     rows.extend(page_rows)
                     if len(page_rows) < 100:
+                        break
+            elif spec.get('type') == 'teamtailor_rss':
+                rows = teamtailor_rows(spec['url'], spec['company'])
+                detail['pages'] = 1
+            elif name == 'jobicy':
+                rows, cursor = [], None
+                for _ in range(int(spec.get('max_pages', 2))):
+                    params = {'count': int(spec.get('count', 100)), 'tag': spec.get('tag', 'azure')}
+                    if cursor:
+                        params['cursor'] = cursor
+                    try:
+                        payload = fetch_json(spec['url'] + '?' + urllib.parse.urlencode(params))
+                    except Exception as exc:
+                        errors[name] = type(exc).__name__
+                        break
+                    page_rows = payload.get('jobs', [])
+                    rows.extend(page_rows)
+                    detail['pages'] += 1
+                    cursor = payload.get('nextCursor')
+                    if not cursor or not page_rows:
                         break
             else:
                 payload = fetch_json(spec["url"])
@@ -236,6 +277,7 @@ def prepare(dry_run: bool = False) -> int:
     now = datetime.now(timezone.utc).isoformat(timespec='seconds')
     run_id = uuid4().hex
     fresh, rejected = [], Counter()
+    source_filtering = {name: {'evaluated': 0, 'compatible': 0, 'already_notified_or_reserved': 0, 'new': 0, 'rejected_by': {}} for name, spec in sources.items() if spec.get('enabled')}
     for record in state['jobs'].values():
         # A reservation left by an interrupted run might have reached Telegram.
         if record.get('status') == 'sending':
@@ -243,24 +285,32 @@ def prepare(dry_run: bool = False) -> int:
     known_urls = {record.get('url'): job_id for job_id, record in state['jobs'].items() if record.get('url')}
     for job in jobs:
         result = evaluate(job, profile)
+        stats = source_filtering.setdefault(job['source'], {'evaluated': 0, 'compatible': 0, 'already_notified_or_reserved': 0, 'new': 0, 'rejected_by': {}})
+        stats['evaluated'] += 1
         if not result['accepted']:
             rejected.update(result['rejected_by'])
+            for reason in result['rejected_by']:
+                stats['rejected_by'][reason] = stats['rejected_by'].get(reason, 0) + 1
             continue
+        stats['compatible'] += 1
         existing_id = job['id'] if job['id'] in state['jobs'] else known_urls.get(job['url'])
         record = state['jobs'].get(existing_id)
         if record:
             record['last_seen_at'] = now
             if record.get('status') != 'pending':
+                stats['already_notified_or_reserved'] += 1
                 continue
             job['id'] = existing_id
         job['matches'], job['evaluation'] = result['matches'], result
         # Only metadata/reasons go into durable state, never complete descriptions.
-        fresh.append({k: v for k, v in job.items() if k != 'text'})
+        fresh.append({k: v for k, v in job.items() if k not in {'text', 'description'}})
+        stats['new'] += 1
     fresh.sort(key=lambda job: job['evaluation']['cloud_priority'])
     report = {'run_at': now, 'run_id': run_id, 'profile_version': profile.get('profile_version'),
               'sources_ok': [s for s, spec in sources.items() if spec.get('enabled') and s not in errors],
               'source_errors': errors, 'fetched': len(jobs), 'new_matches': len(fresh),
               'source_counts': source_stats,
+              'source_filtering': source_filtering,
               'rejected_by': dict(rejected),
               'uncertain_deliveries': sum(r.get('status') == 'uncertain' for r in state['jobs'].values())}
     atomic_json(ROOT / 'reports/latest.json', report)
@@ -278,7 +328,9 @@ def prepare(dry_run: bool = False) -> int:
     summary = (f"Fuentes consultadas: {', '.join(report['sources_ok']) or 'ninguna'}. "
                f"Fuentes con error o resultados parciales: {', '.join(errors) or 'ninguna'}. "
                f"Avisos inciertos pendientes de revision: {report['uncertain_deliveries']}. "
-               'Orden: Azure, AWS, otros cargos elegidos. Elegibilidad laboral por verificar.')
+               f"Filtros: {', '.join(profile.get('preferences', {}).get('required_clouds', [])) or 'perfil CV'}; "
+               f"idioma {', '.join(profile.get('preferences', {}).get('posting_languages', [])) or 'sin definir'}. "
+               + ' | '.join(f"{name}: {s['evaluated']} revisadas/{s['compatible']} compatibles/{s['new']} nuevas" for name, s in source_filtering.items()))
     atomic_json(state_path, state)
     atomic_json(ROOT / 'data/outbox.json', {'run_id': run_id, 'run_at': now, 'status': 'ready',
                 'jobs': fresh, 'summary': summary, 'exit_code': 2 if not jobs and errors and not report['sources_ok'] else 0})
@@ -307,6 +359,8 @@ def notify() -> int:
         atomic_json(state_path, state)
     try:
         receipt = telegram_send(token, chat_id, jobs, outbox['run_at'], outbox['summary'], checkpoint=checkpoint)
+        outbox['message_ids'] = receipt['message_ids']
+        outbox['delivered_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds')
         for job in jobs:
             if state['jobs'][job['id']]['status'] == 'sending':
                 state['jobs'][job['id']].update(status='notified', message_ids=receipt['message_ids'], notified_at=outbox['run_at'])

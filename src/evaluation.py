@@ -2,12 +2,8 @@
 from __future__ import annotations
 
 import re
-import unicodedata
 from typing import Any
-
-
-def folded(value: str) -> str:
-    return ''.join(c for c in unicodedata.normalize('NFKD', value.casefold()) if not unicodedata.combining(c))
+from src.languages import folded, posting_language, required_english
 
 
 def positive_terms(text: str, terms: list[str]) -> list[str]:
@@ -40,6 +36,18 @@ def evaluate(job: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
         reasons.append('cargo_fuera_del_objetivo')
     if len(matches) < int(rules.get('minimum_profile_terms', 1)) and not roles:
         reasons.append('sin_coincidencia_del_perfil')
+    cloud_aliases = {'Azure': ['Azure', 'Microsoft Azure'], 'AWS': ['AWS', 'Amazon Web Services']}
+    required_clouds = prefs.get('required_clouds', [])
+    if required_clouds and not any(positive_terms(job['text'], cloud_aliases.get(c, [c])) for c in required_clouds):
+        reasons.append('sin_nube_objetivo')
+    if any(positive_terms(job['text'], cloud_aliases.get(c, [c])) for c in prefs.get('excluded_clouds', [])):
+        reasons.append('nube_excluida')
+    language = posting_language(job.get('description', job['text']), job.get('language_hint', ''))
+    if prefs.get('posting_languages') and language['language'] not in prefs['posting_languages']:
+        reasons.append('idioma_anuncio_no_confirmado' if language['language'] == 'unknown' else 'idioma_anuncio_no_elegido')
+    english_required = required_english(job['text'])
+    if prefs.get('exclude_required_english') and english_required:
+        reasons.append('ingles_requerido')
     if prefs.get('work_modes'):
         mode = job.get('work_mode', 'unknown')
         if mode == 'unknown':
@@ -54,7 +62,7 @@ def evaluate(job: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
             unknowns.append('Alcance mundial anunciado; verificar condiciones y autorizacion')
         elif re.search(r'\b(peru|latam|latin america|america latina|south america|sudamerica|americas)\b', location):
             unknowns.append('Region compatible con Peru; verificar autorizacion y horario')
-        elif re.search(r'\b(usa|united states|us|canada|uk|united kingdom|europe|european union|emea|apac|germany|france|spain|chile|mexico|colombia|argentina|brazil|brasil|australia|india)\b', location):
+        elif re.search(r'\b(usa|united states|us|canada|uk|united kingdom|europe|europa|european union|emea|apac|germany|france|spain|espana|panama|chile|mexico|colombia|argentina|brazil|brasil|australia|india)\b', location):
             reasons.append('restriccion_geografica_sin_peru')
         else:
             unknowns.append('Elegibilidad desde Peru por confirmar')
@@ -66,5 +74,6 @@ def evaluate(job: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
     priority = min((cloud_order.index(c) for c in clouds), default=len(cloud_order))
     return {'accepted': not reasons, 'matches': matches, 'roles': roles,
             'rejected_by': reasons, 'uncertainties': unknowns,
+            'posting_language': language, 'english_required_detected': english_required,
             'clouds': clouds, 'cloud_priority': priority,
             'opportunity_type': job.get('opportunity_type', 'unknown')}

@@ -28,9 +28,9 @@ El evento `schedule` consulta cada día a las `01:17 UTC`, equivalente a las `20
 
 ## 4. Ajustar búsquedas
 
-Edita `config/profile.json` para actualizar hechos del CV y preferencias confirmadas, y `config/sources.json` para cambiar fuentes/paginación. Perfil v2: cuatro cargos del CV, remoto global desde Perú, prioridad Azure y luego AWS, empleo y freelance/contratos. Los aliases de cargos están en `matching.role_aliases`; son variantes de los cargos elegidos. No ampliar objetivos ni inventar salario mínimo, idioma, disponibilidad o exclusiones.
+Edita `config/profile.json` para actualizar hechos del CV y preferencias confirmadas, y `config/sources.json` para cambiar fuentes/paginación. Perfil v3: cuatro cargos del CV, remoto global desde Perú, solo Azure, excluir AWS, anuncios en español y sin inglés obligatorio detectado, empleo y freelance/contratos. Los aliases de cargos están en `matching.role_aliases`; son variantes de los cargos elegidos. Español es una preferencia confirmada; no inventar nivel certificado, salario mínimo ni disponibilidad. Si cambias una preferencia, comprueba que el evaluador la implementa, no solo que exista un campo JSON.
 
-Las fuentes actuales son Get on Board (categoría SysAdmin/DevOps/QA, máximo tres páginas), Remotive y Remote OK. La búsqueda no cubre todo Internet. Remotive retrasa sus ofertas y recomienda no consultar con demasiada frecuencia; la programación diaria respeta esa guía.
+Las fuentes actuales son Get on Board (máximo tres páginas), Remotive, Remote OK, Jobicy (Azure; dos páginas máximo) y Sofka (RSS oficial; hasta 100 anuncios). La búsqueda no cubre todo Internet. Remotive retrasa sus ofertas y recomienda no consultar con demasiada frecuencia; la programación diaria respeta esa guía.
 
 ## 5. Cambios futuros
 

@@ -1,5 +1,31 @@
 {
-  "getonbrd": {"enabled": true, "url": "https://www.getonbrd.com/api/v0/categories", "category": "sysadmin-devops-qa", "max_pages": 3},
-  "remotive": {"enabled": true, "url": "https://remotive.com/api/remote-jobs"},
-  "remoteok": {"enabled": true, "url": "https://remoteok.com/api"}
+  "getonbrd": {
+    "enabled": true,
+    "url": "https://www.getonbrd.com/api/v0/categories",
+    "category": "sysadmin-devops-qa",
+    "max_pages": 3
+  },
+  "remotive": {
+    "enabled": true,
+    "url": "https://remotive.com/api/remote-jobs"
+  },
+  "remoteok": {
+    "enabled": true,
+    "url": "https://remoteok.com/api"
+  },
+  "jobicy": {
+    "enabled": true,
+    "url": "https://jobicy.com/api/v2/remote-jobs",
+    "tag": "azure",
+    "count": 100,
+    "max_pages": 2,
+    "documentation": "https://jobicy.com/jobs-rss-feed"
+  },
+  "sofka": {
+    "enabled": true,
+    "type": "teamtailor_rss",
+    "company": "Sofka",
+    "url": "https://sofka.teamtailor.com/jobs.rss?per_page=100",
+    "documentation": "https://support.teamtailor.com/en/articles/11171756-rss-feed-how-to-guide"
+  }
 }

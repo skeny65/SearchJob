@@ -1,5 +1,5 @@
 {
-  "profile_version": 2,
+  "profile_version": 3,
   "location": "Lima, Peru",
   "languages": [],
   "historical_roles_from_cv": [
@@ -57,13 +57,22 @@
     "excluded_terms": [],
     "geographic_scope": "worldwide",
     "cloud_priority": [
-      "Azure",
-      "AWS"
+      "Azure"
     ],
     "opportunity_types": [
       "employment",
       "freelance"
-    ]
+    ],
+    "required_clouds": [
+      "Azure"
+    ],
+    "excluded_clouds": [
+      "AWS"
+    ],
+    "posting_languages": [
+      "es"
+    ],
+    "exclude_required_english": true
   },
   "matching": {
     "minimum_profile_terms": 1,

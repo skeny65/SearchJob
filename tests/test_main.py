@@ -63,6 +63,7 @@ class RunTests(unittest.TestCase):
     @patch.object(main, "telegram_send", return_value={"message_ids": [9]})
     def test_empty_daily_run_sends_health_summary(self, send, _collect):
         self.assertEqual(main.run(), 0)
+        self.assertEqual(main.read_json(self.root / 'data/outbox.json')['message_ids'], [9])
         self.assertEqual(send.call_args.args[2], [])
         self.assertIn("Fuentes consultadas", send.call_args.args[4])
 
@@ -94,9 +95,13 @@ class RunTests(unittest.TestCase):
 
     @patch.object(main, 'telegram_send')
     def test_prepare_reserves_without_sending_and_notify_requires_reservation(self, send):
-        with patch.object(main, 'collect', return_value=(self.jobs(), {})):
+        jobs = [{**job, 'description': 'private full advertisement text'} for job in self.jobs()]
+        with patch.object(main, 'collect', return_value=(jobs, {})):
             self.assertEqual(main.run(phase='prepare'), 0)
         send.assert_not_called()
+        outbox = main.read_json(self.root / 'data/outbox.json')
+        self.assertNotIn('description', outbox['jobs'][0])
+        self.assertNotIn('text', outbox['jobs'][0])
         state = main.read_json(self.root / 'data/seen_jobs.json')
         self.assertEqual(state['jobs']['0']['status'], 'sending')
         state['jobs']['0']['reservation'] = 'wrong'

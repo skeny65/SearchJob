@@ -33,12 +33,16 @@ El modo `--dry-run` consulta fuentes, muestra coincidencias y no envía Telegram
 - Get on Board: API pública, categoría `sysadmin-devops-qa`, hasta tres páginas.
 - Remotive: API pública, retraso aproximado de 24 horas; consulta diaria y enlace/atribución a la fuente.
 - Remote OK: feed JSON público; mantener atribución y enlace al anuncio original.
+- Jobicy: API pública, consulta Azure, hasta dos páginas de 100 entradas con cursor; conservar atribución y URL Jobicy.
+- Sofka: feed RSS oficial de empleo sobre Teamtailor, hasta 100 anuncios por consulta diaria; enlace al anuncio de Sofka.
 
-El perfil v2 aplica las preferencias elegidas por Keny: DevOps Engineer, DevSecOps, Cloud Engineer y Azure Specialist (con variantes equivalentes en español), remoto, Azure primero y AWS después. Requiere un cargo objetivo en el título; una palabra como Azure en una oferta QA no basta. Los cargos genéricos elegidos siguen admitidos aunque no mencionen una nube concreta. No se añadieron SRE/Platform como objetivos independientes, seniority, tecnologías obligatorias ni un score de contratación.
+El perfil v3 aplica las preferencias actualizadas de Keny: los cuatro cargos del CV, remoto, **solo Azure y anuncios en español**. Se exige una mención positiva de Azure y se excluye AWS/Amazon Web Services, también en ofertas mixtas Azure+AWS. El CV conserva AWS como experiencia histórica, separado de preferencias.
 
-Busca internacionalmente desde Perú: descarta modalidad híbrida/presencial y restricciones regionales explícitas incompatibles. Las ubicaciones/modalidades desconocidas siguen visibles con una advertencia de verificación. Una mención de Worldwide/LATAM no prueba autorización laboral ni elegibilidad; el resumen lo aclara. Es una heurística de palabras/metadata, no una revisión jurídica ni comprensión completa de cada anuncio.
+El idioma del anuncio se toma de metadata explícita o de una heurística de texto. Se excluyen idioma inglés/otro e idioma desconocido; un título técnico inglés puede acompañar una descripción en español. Se rechazan menciones de inglés exigido detectadas; inglés claramente opcional/no requerido no cuenta como obligación. Esta detección no sustituye revisar requisitos en el anuncio original. No hay un filtro previo que exija inglés.
 
-Empleo y proyectos/contratos están aceptados; se muestra el tipo cuando la fuente lo proporciona. No hay un conector dedicado a marketplaces freelance ni cobertura de Upwork. Salario mínimo, idioma, disponibilidad y exclusiones siguen sin definir. La búsqueda está limitada a las fuentes y páginas configuradas, y una vacante recién descubierta puede ser antigua.
+Requiere un cargo elegido en el título y descarta modalidad híbrida/presencial y restricciones regionales explícitas incompatibles con Perú. Modalidad y elegibilidad geográfica ausentes siguen visibles con dudas. Salario mínimo y disponibilidad siguen pendientes. No se añadieron SRE/Platform como cargos independientes ni un score mínimo.
+
+Empleo y proyectos/contratos están aceptados cuando las fuentes los proporcionan; aún no hay un marketplace freelance dedicado. Cada reporte muestra evaluadas, compatibles, ya notificadas/reservadas, nuevas y razones de descarte por fuente. Una fuente consultada puede tener cero candidatas. No hay cobertura universal ni garantía de ofertas recientes fuera de las páginas configuradas.
 
 ## Diseño operativo
 
