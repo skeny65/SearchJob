@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: keny-job-hunter
@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   discover:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,16 +27,28 @@ jobs:
           python-version: "3.12"
       - name: Test
         run: python -m unittest discover -s tests -v
-      - name: Search and notify
+      - name: Collect and reserve notifications
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -m src.main
-      - name: Persist minimal dedup state
-        if: always()
+        run: python -m src.main --phase prepare
+      - name: Persist reservation before contacting Telegram
+        id: reserve
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/seen_jobs.json
+          git add data/seen_jobs.json data/outbox.json reports/latest.json
+          git diff --cached --quiet || (git commit -m "chore: reserve job notifications" && git push)
+      - name: Deliver reserved summary
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m src.main --phase notify
+      - name: Persist delivery receipts
+        if: ${{ always() && steps.reserve.outcome == 'success' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seen_jobs.json data/outbox.json
           if [ -f reports/latest.json ]; then git add reports/latest.json; fi
           git diff --cached --quiet || (git commit -m "chore: persist job search state" && git push)

@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from src import main
+from src.notifications import DeliveryError
 
 
 class NormalizeTests(unittest.TestCase):
@@ -85,6 +86,53 @@ class RunTests(unittest.TestCase):
         self.assertEqual(main.run(dry_run=True), 0)
         self.assertFalse(send.called)
         self.assertEqual(state_path.read_bytes(), before)
+
+    def jobs(self):
+        return [{'id': str(i), 'title': 'DevOps Engineer', 'company': 'Acme',
+                 'source': 'remotive', 'source_id': str(i), 'url': f'https://example.com/{i}',
+                 'location': 'Worldwide', 'text': 'Azure', 'work_mode': 'remote'} for i in range(3)]
+
+    @patch.object(main, 'telegram_send')
+    def test_prepare_reserves_without_sending_and_notify_requires_reservation(self, send):
+        with patch.object(main, 'collect', return_value=(self.jobs(), {})):
+            self.assertEqual(main.run(phase='prepare'), 0)
+        send.assert_not_called()
+        state = main.read_json(self.root / 'data/seen_jobs.json')
+        self.assertEqual(state['jobs']['0']['status'], 'sending')
+        state['jobs']['0']['reservation'] = 'wrong'
+        main.atomic_json(self.root / 'data/seen_jobs.json', state)
+        self.assertEqual(main.notify(), 5)
+        send.assert_not_called()
+
+    def test_partial_delivery_keeps_receipts_uncertainty_and_unsent_pending(self):
+        def partial(*args, checkpoint, **kwargs):
+            checkpoint(['0'], 19)
+            raise DeliveryError('uncertain', ['1'])
+        with patch.object(main, 'collect', return_value=(self.jobs(), {})), patch.object(main, 'telegram_send', side_effect=partial):
+            self.assertEqual(main.run(), 4)
+        state = main.read_json(self.root / 'data/seen_jobs.json')['jobs']
+        self.assertEqual([state[str(i)]['status'] for i in range(3)], ['notified', 'uncertain', 'pending'])
+        self.assertEqual(state['0']['message_ids'], [19])
+        with patch.object(main, 'collect', return_value=(self.jobs(), {})):
+            self.assertEqual(main.run(phase='prepare'), 0)
+        self.assertEqual([x['id'] for x in main.read_json(self.root / 'data/outbox.json')['jobs']], ['2'])
+
+    def test_interrupted_reservation_is_not_automatically_retried(self):
+        with patch.object(main, 'collect', return_value=(self.jobs(), {})):
+            main.run(phase='prepare')
+            main.run(phase='prepare')
+        self.assertEqual(main.read_json(self.root / 'data/outbox.json')['jobs'], [])
+        self.assertEqual(main.read_json(self.root / 'data/seen_jobs.json')['jobs']['0']['status'], 'uncertain')
+
+    @patch.object(main, 'telegram_send', return_value={'message_ids': [19]})
+    def test_cross_run_mirror_url_is_not_notified_twice(self, _send):
+        jobs = self.jobs()[:1]
+        with patch.object(main, 'collect', return_value=(jobs, {})):
+            main.run()
+        mirror = {**self.jobs()[0], 'id': 'mirror', 'source': 'remoteok'}
+        with patch.object(main, 'collect', return_value=([mirror], {})):
+            main.run(phase='prepare')
+        self.assertEqual(main.read_json(self.root / 'data/outbox.json')['jobs'], [])
 
 
 if __name__ == "__main__":

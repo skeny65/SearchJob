@@ -1,5 +1,5 @@
 {
-  "profile_version": 1,
+  "profile_version": 2,
   "location": "Lima, Peru",
   "languages": [],
   "historical_roles_from_cv": [
@@ -9,22 +9,82 @@
     "Azure Specialist"
   ],
   "skills_from_cv": [
-    "Azure", "AWS", "Terraform", "Terragrunt", "Azure DevOps",
-    "GitHub Actions", "CI/CD", "Docker", "Kubernetes", "AKS",
-    "Azure API Management", "Microsoft Entra ID", "Azure Active Directory",
-    "MFA", "SSO", "VPN", "NSG", "Azure Monitor", "Application Insights",
-    "Open Policy Agent", "Checkov", "Terratest", "Infracost", "TFLint",
-    "SonarCloud", "HashiCorp Vault"
+    "Azure",
+    "AWS",
+    "Terraform",
+    "Terragrunt",
+    "Azure DevOps",
+    "GitHub Actions",
+    "CI/CD",
+    "Docker",
+    "Kubernetes",
+    "AKS",
+    "Azure API Management",
+    "Microsoft Entra ID",
+    "Azure Active Directory",
+    "MFA",
+    "SSO",
+    "VPN",
+    "NSG",
+    "Azure Monitor",
+    "Application Insights",
+    "Open Policy Agent",
+    "Checkov",
+    "Terratest",
+    "Infracost",
+    "TFLint",
+    "SonarCloud",
+    "HashiCorp Vault"
   ],
-  "certifications_from_cv_unverified": ["AZ-400", "AZ-104", "AZ-700", "AZ-900"],
+  "certifications_from_cv_unverified": [
+    "AZ-400",
+    "AZ-104",
+    "AZ-700",
+    "AZ-900"
+  ],
   "preferences": {
-    "target_roles": [],
-    "work_modes": [],
+    "target_roles": [
+      "DevOps Engineer",
+      "DevSecOps",
+      "Cloud Engineer",
+      "Azure Specialist"
+    ],
+    "work_modes": [
+      "remote"
+    ],
     "countries": [],
     "minimum_compensation": null,
-    "excluded_terms": []
+    "excluded_terms": [],
+    "geographic_scope": "worldwide",
+    "cloud_priority": [
+      "Azure",
+      "AWS"
+    ],
+    "opportunity_types": [
+      "employment",
+      "freelance"
+    ]
   },
   "matching": {
-    "minimum_profile_terms": 1
+    "minimum_profile_terms": 1,
+    "role_aliases": {
+      "DevOps Engineer": [
+        "DevOps",
+        "Ingeniero DevOps",
+        "Ingeniera DevOps"
+      ],
+      "DevSecOps": [
+        "DevSecOps"
+      ],
+      "Cloud Engineer": [
+        "Cloud Engineer",
+        "Ingeniero Cloud",
+        "Ingeniera Cloud"
+      ],
+      "Azure Specialist": [
+        "Azure Specialist",
+        "Especialista Azure"
+      ]
+    }
   }
 }

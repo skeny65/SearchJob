@@ -16,7 +16,7 @@ Ya confirmaste que ambos aparecen en GitHub. Nunca los agregues como variables, 
 1. Abre el repositorio y selecciona **Actions**. Si GitHub pregunta, habilita GitHub Actions para el repo.
 2. Selecciona **Keny Job Hunter** en la lista de workflows.
 3. Pulsa **Run workflow**, elige la rama `main` y confirma.
-4. Abre la ejecución y espera los pasos **Test**, **Search and notify** y **Persist minimal dedup state**.
+4. Abre la ejecución y revisa **Test**, **Collect and reserve notifications**, **Persist reservation before contacting Telegram**, **Deliver reserved summary** y **Persist delivery receipts**.
 5. Revisa Telegram. Debes recibir un resumen aunque haya cero ofertas nuevas; el resumen indica qué fuentes respondieron y cuáles fallaron.
 6. En GitHub, verifica el reporte `reports/latest.json` y que el estado mínimo se haya guardado en `data/seen_jobs.json` cuando hubo ofertas nuevas.
 
@@ -28,7 +28,7 @@ El evento `schedule` consulta cada día a las `01:17 UTC`, equivalente a las `20
 
 ## 4. Ajustar búsquedas
 
-Edita `config/profile.json` para actualizar hechos técnicos confirmados del CV y `config/sources.json` para activar/desactivar fuentes o limitar páginas. Las preferencias de puestos, modalidad, países, compensación y exclusiones están vacías; no las rellenes por inferencia. Revisa un lote y acuerda esos criterios con Keny antes de afinar la selección.
+Edita `config/profile.json` para actualizar hechos del CV y preferencias confirmadas, y `config/sources.json` para cambiar fuentes/paginación. Perfil v2: cuatro cargos del CV, remoto global desde Perú, prioridad Azure y luego AWS, empleo y freelance/contratos. Los aliases de cargos están en `matching.role_aliases`; son variantes de los cargos elegidos. No ampliar objetivos ni inventar salario mínimo, idioma, disponibilidad o exclusiones.
 
 Las fuentes actuales son Get on Board (categoría SysAdmin/DevOps/QA, máximo tres páginas), Remotive y Remote OK. La búsqueda no cubre todo Internet. Remotive retrasa sus ofertas y recomienda no consultar con demasiada frecuencia; la programación diaria respeta esa guía.
 
@@ -51,7 +51,7 @@ git commit -m "describe el cambio"
 git push origin main
 ```
 
-El workflow de Actions probará los tests antes de la búsqueda programada/manual. El paso final guarda `data/seen_jobs.json` y `reports/latest.json` usando el `GITHUB_TOKEN` con permiso `contents: write` definido en el workflow.
+El workflow CI prueba cambios de código/configuración sin secretos ni acceso a Telegram. El buscador también prueba antes de cada corrida. Su job requiere `contents: write` para persistir reserva, outbox y recibos. No concede `models` ni `issues`.
 
 ## 6. Privacidad y alcance
 
@@ -61,4 +61,6 @@ El pipeline solo busca y notifica; nunca completa formularios ni envía candidat
 
 ## Entrega incierta
 
-Si el estado marca una oferta como `uncertain`, comprueba primero el chat de Telegram. No borres ni reproceses la entrada hasta determinar si el mensaje llegó. Los reintentos automáticos podrían duplicar notificaciones.
+Si el estado marca una oferta como `uncertain`, comprueba primero el chat de Telegram. No borres ni reproceses la entrada hasta determinar si llegó. Los mensajes confirmados conservan `message_ids`; los aún no intentados quedan `pending` y pueden retomarse si la vacante reaparece. Una reserva interrumpida pasa de `sending` a `uncertain`, nunca se reenvía silenciosamente.
+
+Para pruebas locales, usa `python -m src.main --dry-run`. El modo local sin esa bandera envía mensajes y no confirma reservas en GitHub por sí mismo; la secuencia durable corresponde al workflow en dos fases. Si falla **Persist delivery receipts**, la reserva previa sigue en GitHub y debe reconciliarse; no ejecutar otro envío a ciegas.
