@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-20T10:42:35+00:00",
-  "run_id": "1d4415c867794e4db224c5b6f2474757",
+  "run_at": "2026-10-21T03:28:44+00:00",
+  "run_id": "9f607a4ca7014d8bb26224da86efc148",
   "profile_version": 3,
   "sources_ok": [
     "getonbrd",
@@ -10,13 +10,13 @@
     "sofka"
   ],
   "source_errors": {},
-  "fetched": 327,
+  "fetched": 338,
   "new_matches": 0,
   "source_counts": {
     "getonbrd": {
       "pages": 2,
-      "fetched": 115,
-      "normalized": 115,
+      "fetched": 116,
+      "normalized": 116,
       "malformed": 0
     },
     "remotive": {
@@ -33,32 +33,32 @@
     },
     "jobicy": {
       "pages": 1,
-      "fetched": 56,
-      "normalized": 56,
+      "fetched": 62,
+      "normalized": 62,
       "malformed": 0
     },
     "sofka": {
       "pages": 1,
-      "fetched": 47,
-      "normalized": 47,
+      "fetched": 51,
+      "normalized": 51,
       "malformed": 0
     }
   },
   "source_filtering": {
     "getonbrd": {
-      "evaluated": 115,
+      "evaluated": 116,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
         "cargo_fuera_del_objetivo": 93,
-        "ingles_requerido": 38,
-        "modalidad_no_elegida": 66,
-        "restriccion_geografica_sin_peru": 65,
+        "sin_coincidencia_del_perfil": 45,
         "sin_nube_objetivo": 87,
+        "ingles_requerido": 38,
+        "modalidad_no_elegida": 68,
+        "restriccion_geografica_sin_peru": 65,
         "nube_excluida": 37,
-        "idioma_anuncio_no_elegido": 25,
-        "sin_coincidencia_del_perfil": 44
+        "idioma_anuncio_no_elegido": 24
       }
     },
     "remotive": {
@@ -83,53 +83,53 @@
       "new": 0,
       "rejected_by": {
         "cargo_fuera_del_objetivo": 99,
-        "sin_coincidencia_del_perfil": 88,
-        "sin_nube_objetivo": 95,
+        "sin_coincidencia_del_perfil": 89,
+        "sin_nube_objetivo": 96,
         "idioma_anuncio_no_elegido": 94,
-        "ingles_requerido": 24,
+        "ingles_requerido": 25,
         "restriccion_geografica_sin_peru": 14,
-        "nube_excluida": 6,
+        "nube_excluida": 5,
         "idioma_anuncio_no_confirmado": 2
       }
     },
     "jobicy": {
-      "evaluated": 56,
+      "evaluated": 62,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "nube_excluida": 49,
-        "idioma_anuncio_no_elegido": 56,
-        "restriccion_geografica_sin_peru": 46,
-        "cargo_fuera_del_objetivo": 55,
-        "ingles_requerido": 10
+        "nube_excluida": 53,
+        "idioma_anuncio_no_elegido": 62,
+        "restriccion_geografica_sin_peru": 51,
+        "cargo_fuera_del_objetivo": 60,
+        "ingles_requerido": 12
       }
     },
     "sofka": {
-      "evaluated": 47,
+      "evaluated": 51,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 45,
-        "sin_coincidencia_del_perfil": 14,
-        "sin_nube_objetivo": 20,
-        "restriccion_geografica_sin_peru": 22,
-        "nube_excluida": 8,
-        "modalidad_no_elegida": 35,
+        "cargo_fuera_del_objetivo": 49,
+        "sin_nube_objetivo": 22,
+        "nube_excluida": 9,
+        "modalidad_no_elegida": 38,
+        "sin_coincidencia_del_perfil": 15,
+        "restriccion_geografica_sin_peru": 24,
         "ingles_requerido": 7
       }
     }
   },
   "rejected_by": {
-    "cargo_fuera_del_objetivo": 302,
-    "ingles_requerido": 82,
-    "modalidad_no_elegida": 101,
-    "restriccion_geografica_sin_peru": 151,
-    "sin_nube_objetivo": 210,
-    "nube_excluida": 101,
-    "idioma_anuncio_no_elegido": 185,
-    "sin_coincidencia_del_perfil": 151,
+    "cargo_fuera_del_objetivo": 311,
+    "sin_coincidencia_del_perfil": 154,
+    "sin_nube_objetivo": 213,
+    "ingles_requerido": 85,
+    "modalidad_no_elegida": 106,
+    "restriccion_geografica_sin_peru": 158,
+    "nube_excluida": 105,
+    "idioma_anuncio_no_elegido": 190,
     "idioma_anuncio_no_confirmado": 2
   },
   "uncertain_deliveries": 0
