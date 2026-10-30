@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-29T07:06:57+00:00",
-  "run_id": "2f31b8670c7541c7aacd24dcd4b83834",
+  "run_at": "2026-10-30T07:07:35+00:00",
+  "run_id": "e9b4b27f3faa4b8caf3bf2d2f87c86c3",
   "profile_version": 3,
   "sources_ok": [
     "getonbrd",
@@ -10,19 +10,19 @@
     "sofka"
   ],
   "source_errors": {},
-  "fetched": 355,
+  "fetched": 359,
   "new_matches": 0,
   "source_counts": {
     "getonbrd": {
       "pages": 2,
-      "fetched": 117,
-      "normalized": 117,
+      "fetched": 121,
+      "normalized": 121,
       "malformed": 0
     },
     "remotive": {
       "pages": 1,
-      "fetched": 11,
-      "normalized": 11,
+      "fetched": 12,
+      "normalized": 12,
       "malformed": 0
     },
     "remoteok": {
@@ -39,40 +39,40 @@
     },
     "sofka": {
       "pages": 1,
-      "fetched": 46,
-      "normalized": 46,
+      "fetched": 45,
+      "normalized": 45,
       "malformed": 0
     }
   },
   "source_filtering": {
     "getonbrd": {
-      "evaluated": 117,
+      "evaluated": 121,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 94,
-        "sin_coincidencia_del_perfil": 43,
-        "sin_nube_objetivo": 87,
+        "cargo_fuera_del_objetivo": 97,
+        "sin_coincidencia_del_perfil": 46,
+        "sin_nube_objetivo": 92,
         "ingles_requerido": 40,
-        "modalidad_no_elegida": 70,
-        "restriccion_geografica_sin_peru": 70,
-        "idioma_anuncio_no_elegido": 24,
-        "nube_excluida": 40
+        "modalidad_no_elegida": 73,
+        "restriccion_geografica_sin_peru": 72,
+        "idioma_anuncio_no_elegido": 25,
+        "nube_excluida": 41
       }
     },
     "remotive": {
-      "evaluated": 11,
+      "evaluated": 12,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 11,
+        "cargo_fuera_del_objetivo": 12,
+        "sin_nube_objetivo": 10,
+        "idioma_anuncio_no_elegido": 12,
+        "ingles_requerido": 4,
+        "restriccion_geografica_sin_peru": 4,
         "sin_coincidencia_del_perfil": 6,
-        "sin_nube_objetivo": 9,
-        "idioma_anuncio_no_elegido": 11,
-        "ingles_requerido": 3,
-        "restriccion_geografica_sin_peru": 3,
         "nube_excluida": 1
       }
     },
@@ -83,10 +83,10 @@
       "new": 0,
       "rejected_by": {
         "cargo_fuera_del_objetivo": 98,
-        "sin_coincidencia_del_perfil": 89,
         "sin_nube_objetivo": 95,
         "idioma_anuncio_no_elegido": 97,
-        "ingles_requerido": 29,
+        "sin_coincidencia_del_perfil": 88,
+        "ingles_requerido": 27,
         "nube_excluida": 6,
         "restriccion_geografica_sin_peru": 11
       }
@@ -97,38 +97,38 @@
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 80,
-        "nube_excluida": 73,
+        "cargo_fuera_del_objetivo": 78,
+        "nube_excluida": 75,
         "idioma_anuncio_no_elegido": 82,
-        "ingles_requerido": 20,
-        "restriccion_geografica_sin_peru": 56
+        "restriccion_geografica_sin_peru": 54,
+        "ingles_requerido": 17
       }
     },
     "sofka": {
-      "evaluated": 46,
+      "evaluated": 45,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 44,
-        "sin_coincidencia_del_perfil": 9,
+        "cargo_fuera_del_objetivo": 43,
+        "sin_coincidencia_del_perfil": 10,
         "sin_nube_objetivo": 15,
-        "modalidad_no_elegida": 38,
+        "modalidad_no_elegida": 37,
         "restriccion_geografica_sin_peru": 23,
-        "nube_excluida": 10,
+        "nube_excluida": 11,
         "ingles_requerido": 5
       }
     }
   },
   "rejected_by": {
-    "cargo_fuera_del_objetivo": 327,
-    "sin_coincidencia_del_perfil": 147,
-    "sin_nube_objetivo": 206,
-    "ingles_requerido": 97,
-    "modalidad_no_elegida": 108,
-    "restriccion_geografica_sin_peru": 163,
-    "idioma_anuncio_no_elegido": 214,
-    "nube_excluida": 130
+    "cargo_fuera_del_objetivo": 328,
+    "sin_coincidencia_del_perfil": 150,
+    "sin_nube_objetivo": 212,
+    "ingles_requerido": 93,
+    "modalidad_no_elegida": 110,
+    "restriccion_geografica_sin_peru": 164,
+    "idioma_anuncio_no_elegido": 216,
+    "nube_excluida": 134
   },
   "uncertain_deliveries": 0
 }
