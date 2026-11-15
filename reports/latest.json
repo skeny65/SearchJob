@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-14T07:37:06+00:00",
-  "run_id": "59abfa9b59e74caca4b75cb86eafcd76",
+  "run_at": "2026-11-15T07:53:05+00:00",
+  "run_id": "d24c63a18a9e49dea4f2527e80acd108",
   "profile_version": 3,
   "sources_ok": [
     "getonbrd",
@@ -10,7 +10,7 @@
     "sofka"
   ],
   "source_errors": {},
-  "fetched": 360,
+  "fetched": 356,
   "new_matches": 0,
   "source_counts": {
     "getonbrd": {
@@ -33,8 +33,8 @@
     },
     "jobicy": {
       "pages": 2,
-      "fetched": 106,
-      "normalized": 106,
+      "fetched": 102,
+      "normalized": 102,
       "malformed": 0
     },
     "sofka": {
@@ -87,21 +87,21 @@
         "sin_nube_objetivo": 89,
         "idioma_anuncio_no_elegido": 96,
         "ingles_requerido": 24,
-        "restriccion_geografica_sin_peru": 11,
-        "nube_excluida": 9
+        "nube_excluida": 9,
+        "restriccion_geografica_sin_peru": 10
       }
     },
     "jobicy": {
-      "evaluated": 106,
+      "evaluated": 102,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 104,
-        "idioma_anuncio_no_elegido": 106,
-        "restriccion_geografica_sin_peru": 90,
-        "nube_excluida": 94,
-        "ingles_requerido": 11
+        "cargo_fuera_del_objetivo": 100,
+        "nube_excluida": 90,
+        "idioma_anuncio_no_elegido": 102,
+        "restriccion_geografica_sin_peru": 87,
+        "ingles_requerido": 10
       }
     },
     "sofka": {
@@ -120,14 +120,14 @@
     }
   },
   "rejected_by": {
-    "cargo_fuera_del_objetivo": 333,
+    "cargo_fuera_del_objetivo": 329,
     "sin_coincidencia_del_perfil": 136,
     "sin_nube_objetivo": 197,
-    "idioma_anuncio_no_elegido": 241,
-    "ingles_requerido": 78,
-    "nube_excluida": 147,
+    "idioma_anuncio_no_elegido": 237,
+    "ingles_requerido": 77,
+    "nube_excluida": 143,
     "modalidad_no_elegida": 97,
-    "restriccion_geografica_sin_peru": 194
+    "restriccion_geografica_sin_peru": 190
   },
   "uncertain_deliveries": 0
 }
