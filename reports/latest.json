@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-16T07:59:23+00:00",
-  "run_id": "8e48735a9bf7467f99dafb3745f4db75",
+  "run_at": "2026-11-17T09:14:02+00:00",
+  "run_id": "d71fab87da614094a908afa8fabb0d1c",
   "profile_version": 3,
   "sources_ok": [
     "getonbrd",
@@ -15,14 +15,14 @@
   "source_counts": {
     "getonbrd": {
       "pages": 2,
-      "fetched": 112,
-      "normalized": 112,
+      "fetched": 114,
+      "normalized": 114,
       "malformed": 0
     },
     "remotive": {
       "pages": 1,
-      "fetched": 16,
-      "normalized": 16,
+      "fetched": 17,
+      "normalized": 17,
       "malformed": 0
     },
     "remoteok": {
@@ -33,46 +33,46 @@
     },
     "jobicy": {
       "pages": 2,
-      "fetched": 110,
-      "normalized": 110,
+      "fetched": 106,
+      "normalized": 106,
       "malformed": 0
     },
     "sofka": {
       "pages": 1,
-      "fetched": 29,
-      "normalized": 29,
+      "fetched": 30,
+      "normalized": 30,
       "malformed": 0
     }
   },
   "source_filtering": {
     "getonbrd": {
-      "evaluated": 112,
+      "evaluated": 114,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
         "cargo_fuera_del_objetivo": 91,
         "sin_coincidencia_del_perfil": 46,
-        "sin_nube_objetivo": 87,
+        "sin_nube_objetivo": 88,
         "idioma_anuncio_no_elegido": 23,
-        "ingles_requerido": 37,
-        "nube_excluida": 35,
-        "modalidad_no_elegida": 73,
-        "restriccion_geografica_sin_peru": 69
+        "ingles_requerido": 39,
+        "nube_excluida": 37,
+        "modalidad_no_elegida": 74,
+        "restriccion_geografica_sin_peru": 70
       }
     },
     "remotive": {
-      "evaluated": 16,
+      "evaluated": 17,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 16,
+        "cargo_fuera_del_objetivo": 17,
+        "sin_nube_objetivo": 14,
+        "idioma_anuncio_no_elegido": 17,
+        "restriccion_geografica_sin_peru": 6,
         "sin_coincidencia_del_perfil": 10,
-        "sin_nube_objetivo": 13,
-        "idioma_anuncio_no_elegido": 16,
         "ingles_requerido": 7,
-        "restriccion_geografica_sin_peru": 5,
         "nube_excluida": 3
       }
     },
@@ -83,50 +83,50 @@
       "new": 0,
       "rejected_by": {
         "cargo_fuera_del_objetivo": 95,
-        "sin_coincidencia_del_perfil": 76,
+        "sin_coincidencia_del_perfil": 77,
         "sin_nube_objetivo": 89,
         "idioma_anuncio_no_elegido": 96,
-        "ingles_requerido": 24,
-        "nube_excluida": 9,
+        "ingles_requerido": 26,
+        "nube_excluida": 8,
         "restriccion_geografica_sin_peru": 10
       }
     },
     "jobicy": {
-      "evaluated": 110,
+      "evaluated": 106,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 108,
-        "nube_excluida": 96,
-        "idioma_anuncio_no_elegido": 110,
-        "restriccion_geografica_sin_peru": 93,
-        "ingles_requerido": 12
+        "cargo_fuera_del_objetivo": 103,
+        "nube_excluida": 92,
+        "idioma_anuncio_no_elegido": 106,
+        "restriccion_geografica_sin_peru": 91,
+        "ingles_requerido": 11
       }
     },
     "sofka": {
-      "evaluated": 29,
+      "evaluated": 30,
       "compatible": 0,
       "already_notified_or_reserved": 0,
       "new": 0,
       "rejected_by": {
-        "cargo_fuera_del_objetivo": 27,
-        "modalidad_no_elegida": 24,
-        "restriccion_geografica_sin_peru": 19,
+        "cargo_fuera_del_objetivo": 28,
+        "nube_excluida": 7,
+        "modalidad_no_elegida": 25,
         "sin_coincidencia_del_perfil": 5,
         "sin_nube_objetivo": 8,
-        "nube_excluida": 6
+        "restriccion_geografica_sin_peru": 19
       }
     }
   },
   "rejected_by": {
-    "cargo_fuera_del_objetivo": 337,
-    "sin_coincidencia_del_perfil": 137,
-    "sin_nube_objetivo": 197,
-    "idioma_anuncio_no_elegido": 245,
-    "ingles_requerido": 80,
-    "nube_excluida": 149,
-    "modalidad_no_elegida": 97,
+    "cargo_fuera_del_objetivo": 334,
+    "sin_coincidencia_del_perfil": 138,
+    "sin_nube_objetivo": 199,
+    "idioma_anuncio_no_elegido": 242,
+    "ingles_requerido": 83,
+    "nube_excluida": 147,
+    "modalidad_no_elegida": 99,
     "restriccion_geografica_sin_peru": 196
   },
   "uncertain_deliveries": 0
