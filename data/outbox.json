@@ -1,8 +1,12 @@
 {
   "run_id": "6da5f6b6860841c6acfe37a4c5eae04e",
   "run_at": "2026-11-27T09:41:09+00:00",
-  "status": "ready",
+  "status": "sent",
   "jobs": [],
   "summary": "Fuentes consultadas: getonbrd, remotive, remoteok, jobicy, sofka. Fuentes con error o resultados parciales: ninguna. Avisos inciertos pendientes de revision: 0. Filtros: Azure; idioma es. getonbrd: 117 revisadas/0 compatibles/0 nuevas | remotive: 16 revisadas/0 compatibles/0 nuevas | remoteok: 100 revisadas/0 compatibles/0 nuevas | jobicy: 1 revisadas/0 compatibles/0 nuevas | sofka: 22 revisadas/0 compatibles/0 nuevas",
-  "exit_code": 0
+  "exit_code": 0,
+  "message_ids": [
+    43
+  ],
+  "delivered_at": "2026-11-27T09:41:13+00:00"
 }
